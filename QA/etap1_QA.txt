@@ -1,0 +1,59 @@
+1.Testy funkcjonalne maj¹ za zadanie testowaæ funkcje wykonywane przez oprogramowanie
+  tj. znajdywaæ braki w ich implementacji , sprawdzaæ czy oprogramowanie zachowuje siê w oczekiwany sposób.
+  Natomiast testy niefunkcjonalne skupione s¹ bardziej na cechach jakoœciowych takich jak wydajnoœæ,
+  niezawodnoœæ ,przenaszalnoœæ.
+
+2.Smoke testy(testy dymne) badaj¹ najbardziej podstawowe funkcjonalnoœci systemu b¹dŸ jego czêœci w celu ustalenia 
+  czy jego kluczowe funkcje dzia³aj¹ poprawnie np. "Czy system jest stabilny i siê uruchomi". Testy regresji wykonujê siê 
+  po to aby stwierdziæ czy nowy kod aplikacji nie spowodowa³ zmiany b¹dŸ zaprzestania dzia³ania istniej¹cych funkcji aplikacji.
+  Testy regresji mo¿na wykonywaæ na ka¿dym poziomie testowania. Testy dymne stosujemy po zakoñczeniu implementacji modu³u systemu
+  przed przejœciem do bardziej szczegó³owego testowania.
+
+3.Celem testowania jest wykrywanie b³êdów oprogramowania, na tej podstawie mo¿emy badaæ 
+  jakoœæ tworzonego oprogramowania. 
+
+4.Jeœli problem dotyczy³ jednego b³êdu to przetestowaæ ponownie ten przypadek, zaœ gdy problem dotyczy³
+  "rodziny" b³êdów to sprawdziæ podany przedzia³.
+
+5.Otrzymanie takich temperatur w zwyk³ych warunkach by³oby doœæ k³opotliwe.
+  Skorzysta³bym z narzêdzi do mock'owania funkcji,modu³ów i zasymulowa³bym sytuacjê ,gdy temperatury
+  siêgaj¹ takim wartoœciom.
+
+6.Wszystkich przypadków jest 4
+  1 - gdy a > 0 i b == 3
+  2 - gdy a > 0 i b != 3
+  3 - gdy a < 0 i b == 3
+  4 - gdy a < 0 i b != 3
+
+7.Wpisa³bym wartoœci kolejno 17,18,60,61
+
+8.Jakie wartoœci dostarczane do inputów przyjêto za prawid³owe 
+  (liczby,znaki, minimalna i maksymalna d³ugoœæ loginu i has³a)? 
+  Czego mam oczekiwaæ w przypadku pomyœlnego zalogowania siê ,a czego w przypadku niepomyœlnego? 
+  Czy do bazy danych dane logowania dochodz¹ w formie jawnej czy zaszyfrowanej(np. skróty z hase³)?
+  Jaki jest dopuszczalny czas odpowiedzi z bazy danych ? 
+  Czy przewidziano jakiœ mechanizm do blokowania ataków brute force na system logowania?
+
+9.Metoda GET posiada okreœlon¹ d³ugoœæ ³añcucha z parametrami, prostsza i szybsza od POST.
+  Parametry pojawiaj¹ siê jawnie w pasku adresu.
+  Metoda POST przesy³a parametry w ciele pliku , nie posiada ograniczeñ dotycz¹cych parametrów.
+  Przesy³ane dane s¹ kodowane.
+
+10.Protokó³ HTTP sam w sobie jest protoko³em bezstanowym oznacza to ,¿e ani serwer ani klient nie przechowuje
+   informacji o poprzednich zapytaniach. Ka¿de zapytanie dla serwera jest "nowe". Aby to obejœæ stosuje siê 
+   mechanizm sesji i ciasteczka.
+   
+11.Kiedy dokonujemy z³¹czenia dwóch tabel poprzez LEFT JOIN otrzymujemy now¹ tabelê ,gdzie 
+   zwrócone s¹ wszystkie wiersze z lewej tabeli dodatkowo z wierszami z prawej tabeli 
+   ,które zosta³y dopasowane (wg kryterium porównania). Jeœli nie dosz³o do dopasowania w dodatkowych komórkach
+   wstawiane s¹ NULL'e. INNER JOIN zwraca wszystkie wiersze z obu tabeli posród ,których dokonano dopasowania. 
+
+12.Pliki konfiguracyjne w systemie linux standardowo znajduj¹ siê w katalogu /etc
+ OdpowiedŸ "C"
+
+13.Pierwsze co bym zrobi³ to siêgn¹³ do dokumentacji (manual cp).Nastêpnie sprawdzi³bym czy aby napewno wszystkie
+   funkcje(prze³¹czniki) wypisane w dokumentacji dzia³aj¹ "zgodnie z planem".Jeœli na tym etapie nic bym nie znalaz³ to pozosta³o
+   wymuszaæ sytuacjê niepo¿¹dane np. podawaæ odpowiednio spreparowane argumenty w lini poleceñ ,które powinny skutkowaæ
+   zg³aszaniem ostrze¿eñ , nieodpowiednim u¿ytkowaniem tej komendy (kolejnoœæ prze³¹czników , liczba argumentów itd).
+   Co siê stanie jak podczas dzia³ania procesu coœ przerwie jego dzia³anie?(zewnêtrzny sygna³ ,wy³¹czenie systemu).
+  
