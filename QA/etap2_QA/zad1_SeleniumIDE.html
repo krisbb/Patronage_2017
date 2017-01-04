@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.google.pl/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<!-- otwieramy strone google.pl -->
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<!-- wpisujemy w formularz wyszukiwana fraze -->
+	<td>type</td>
+	<td>id=lst-ib</td>
+	<td>Intive</td>
+</tr>
+<tr>
+	<!-- klikamy na tzw. lupę aby zacząć wyszukiwać -->
+	<td>click</td>
+	<td>id=_fZl</td>
+	<td></td>
+</tr>
+<tr>
+	<!-- czekamy zalozone 2 sekundy na zaladowanie sie calej strony -->
+	<!-- uzylem komendy pause ,poniewaz komendy waitForPageLoad i clickAndWait w tym przypadku -->
+	<!-- nie spelniaja swojego zadania bo ponownie wczytywana jest tylko czesc strony -->
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+    <!-- klikamy w link w znaczniku h3 -->
+	<!-- i czekamy az cala strona sie zaladuje -->
+	<td>clickAndWait</td>
+	<td>//h3/a</td>
+	<td></td>
+</tr>
+<tr>
+	<!-- wykonujemy screenshot'a strony -->
+	<td>captureEntirePageScreenshot</td>
+	<td>D:\screenshot.jpg</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
