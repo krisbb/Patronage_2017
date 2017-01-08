@@ -12,40 +12,31 @@
 <tr><td rowspan="1" colspan="3">New Test</td></tr>
 </thead><tbody>
 <tr>
-	<!-- otwieramy strone google.pl -->
 	<td>open</td>
 	<td>/</td>
 	<td></td>
 </tr>
 <tr>
-	<!-- wpisujemy w formularz wyszukiwana fraze -->
 	<td>type</td>
 	<td>id=lst-ib</td>
 	<td>Intive</td>
 </tr>
 <tr>
-	<!-- klikamy na tzw. lupę aby zacząć wyszukiwać -->
-	<td>click</td>
-	<td>id=_fZl</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=lst-ib</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
-	<!-- czekamy zalozone 2 sekundy na zaladowanie sie calej strony -->
-	<!-- uzylem komendy pause ,poniewaz komendy waitForPageLoad i clickAndWait w tym przypadku -->
-	<!-- nie spelniaja swojego zadania bo ponownie wczytywana jest tylko czesc strony -->
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
-    <!-- klikamy w link w znaczniku h3 -->
-	<!-- i czekamy az cala strona sie zaladuje -->
 	<td>clickAndWait</td>
 	<td>//h3/a</td>
 	<td></td>
 </tr>
 <tr>
-	<!-- wykonujemy screenshot'a strony -->
 	<td>captureEntirePageScreenshot</td>
 	<td>D:\screenshot.jpg</td>
 	<td></td>
