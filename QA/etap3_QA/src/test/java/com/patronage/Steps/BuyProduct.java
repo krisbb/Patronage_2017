@@ -1,6 +1,7 @@
 package com.patronage.Steps;
 
 
+import com.patronage.DriverFactory;
 import com.patronage.Pages.BuyingProcessPage;
 import com.patronage.Pages.MainPage;
 import com.patronage.Pages.MyAddressesPage;
@@ -14,8 +15,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BuyProduct implements En {
-    WebDriver driver = new ChromeDriver();
+public class BuyProduct extends DriverFactory implements En {
+
     String baseUrl = "automationpractice.com";
     MainPage mp = PageFactory.initElements(driver, MainPage.class);
     BuyingProcessPage bpp = PageFactory.initElements(driver, BuyingProcessPage.class);
@@ -24,9 +25,16 @@ public class BuyProduct implements En {
 
     public BuyProduct() {
 
-        After(Scenario -> {
-            driver.quit();
-        });
+//        Before(Scenario -> {
+//            driver = new DriverFactory().getDriver();
+//            mp = PageFactory.initElements(driver, MainPage.class);
+//            bpp = PageFactory.initElements(driver, BuyingProcessPage.class);
+//            map = PageFactory.initElements(driver, MyAddressesPage.class);
+//        });
+//
+//        After(Scenario -> {
+//            new DriverFactory().destroyDriver();
+//        });
 
         Given("^User is loged in on account$", () -> {
             driver.get("http://" + baseUrl);

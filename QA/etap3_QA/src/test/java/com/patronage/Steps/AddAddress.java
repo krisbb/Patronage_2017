@@ -1,36 +1,29 @@
 package com.patronage.Steps;
 
-import com.patronage.BrowserDriver;
+import com.patronage.DriverFactory;
 import com.patronage.Pages.MainPage;
 import com.patronage.Pages.MyAddressesPage;
-import cucumber.api.Scenario;
 import cucumber.api.java8.En;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AddAddress implements En {
+public class AddAddress extends DriverFactory implements En {
 
-    WebDriver driver = new ChromeDriver();
     String baseUrl = "automationpractice.com";
     MainPage mp = PageFactory.initElements(driver, MainPage.class);
     MyAddressesPage map = PageFactory.initElements(driver, MyAddressesPage.class);
 
     public AddAddress() {
 
-        /*Before(Scenario -> {
-            driver = new ChromeDriver();
-            mp = PageFactory.initElements(driver, MainPage.class);
-            map = PageFactory.initElements(driver, MyAddressesPage.class);
-        });*/
+        Before(Scenario -> {
+            driver = new DriverFactory().getDriver();
+        });
 
         After(Scenario -> {
-            driver.quit();
+            new DriverFactory().destroyDriver();
         });
 
         Given("^user is logged in on account$", () -> {

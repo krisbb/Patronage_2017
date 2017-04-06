@@ -6,7 +6,6 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "/src/test/java/com/patronage", format = "json:target/cucumber.json", glue = "com.patronage")
+@CucumberOptions(features = "src/test/java/com/patronage", format = "json:target/cucumber.json", glue = "com.patronage")
 class TestRunner{
-
 }

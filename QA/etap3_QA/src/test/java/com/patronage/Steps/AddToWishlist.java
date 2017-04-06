@@ -1,31 +1,23 @@
 package com.patronage.Steps;
 
 
-import com.patronage.BrowserDriver;
+import com.patronage.DriverFactory;
 import com.patronage.Pages.MainPage;
 import com.patronage.Pages.MyWishlistPage;
-import cucumber.api.Scenario;
 import cucumber.api.java8.En;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AddToWishlist implements En{
+public class AddToWishlist extends DriverFactory implements En{
 
-    WebDriver driver = new ChromeDriver();
     String baseUrl = "automationpractice.com";
     MainPage  mp = PageFactory.initElements(driver, MainPage.class);
     MyWishlistPage mwp = PageFactory.initElements(driver, MyWishlistPage.class);
 
     public AddToWishlist() {
-
-        After(Scenario -> {
-            driver.quit();
-        });
 
         Given("^user is logged in$", () -> {
             driver.get("http://" + baseUrl);

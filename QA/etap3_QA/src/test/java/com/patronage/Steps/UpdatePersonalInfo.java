@@ -1,32 +1,23 @@
 package com.patronage.Steps;
 
 
-import com.patronage.BrowserDriver;
+import com.patronage.DriverFactory;
 import com.patronage.Pages.MainPage;
 import com.patronage.Pages.MyPersonalInformationPage;
-import cucumber.api.Scenario;
 import cucumber.api.java8.En;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UpdatePersonalInfo implements En {
+public class UpdatePersonalInfo extends DriverFactory implements En {
 
-    WebDriver driver = new ChromeDriver();
     String baseUrl = "automationpractice.com";
     MainPage mp = PageFactory.initElements(driver, MainPage.class);
     MyPersonalInformationPage mpip = PageFactory.initElements(driver, MyPersonalInformationPage.class);
 
     public UpdatePersonalInfo() {
-
-        After(Scenario -> {
-
-            driver.quit();
-        });
 
         Given("^user is loged in on account$", () -> {
             driver.get("http://" + baseUrl);

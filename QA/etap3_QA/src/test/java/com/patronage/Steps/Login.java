@@ -1,27 +1,20 @@
 package com.patronage.Steps;
 
-import com.patronage.BrowserDriver;
+import com.patronage.DriverFactory;
 import com.patronage.Pages.MainPage;
 import cucumber.api.java8.En;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Login implements En {
+public class Login extends DriverFactory implements En {
 
-    WebDriver driver = new ChromeDriver();
     String baseUrl = "automationpractice.com";
     MainPage mp = PageFactory.initElements(driver, MainPage.class);
 
     public Login() {
-
-        After(Scenario -> {
-            driver.quit();
-        });
 
         Given("^user is on main page$", () -> {
             driver.get("http://" + baseUrl);
